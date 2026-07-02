@@ -1,0 +1,12 @@
+{
+	"type": "module",
+	"name": "pi-swarmresearch-managed-subagent",
+	"version": "0.1.0",
+	"description": "PI extension: minimal managed_subagent tool for SwarmResearch worktree-isolated experiments",
+	"license": "MIT",
+	"pi": {
+		"extensions": [
+			"./index.ts"
+		]
+	}
+}

@@ -1,0 +1,36 @@
+* 9d33ac5 (researcher-25) Pairwise cycle refinement instead of tournament-based | score = 2,397,916
+* a7b82df (researcher-19) Sort + snake assignment + direct group comparison refinement | score = 2,694,124
+| * 1c17ad1 (researcher-23) Uncapped refinement with binary search + swap fallback for overshoot | score = 1,946,740
+| * 7982fcd (researcher-17) Binary search refinement with under-correction preference | score = 2,269,587
+| | * 8caef86 (researcher-18) Combined guided SA + refinement experiments: all variants scored worse than parent | score = no improvement (best ~3.1M vs parent 2.67M)
+| |/  
+| | * 245220a (researcher-24, researcher-22, researcher-21, researcher-20) Uncapped refinement budget + overshoot detection with swap fallback | score = 2,172,712
+| |/  
+| * 51fa0c0 (researcher-16, researcher-13) Group-comparison refinement: use remaining queries to compare actual group sums and rebalance | score = 2,666,483
+|/  
+| * 7121a00 (researcher-15) Exponential order stats and 1-vs-group weight refinement experiments | score = failed to beat parent (best 3,957,268 vs parent 3,264,032)
+| | * 6fe8237 (researcher-12) Document failed experiments (order statistics, multi-start SA, balance feedback) | score = no improvement over parent 3264032
+| |/  
+| | * 03c690f (researcher-11) Exponential order statistics weight estimation (failed - worse than parent) | score = 5074976-6129111 (regression from 3264032)
+| |/  
+| * c0b2e69 (researcher-6) Guided SA with snake init and best-tracking for partitioning | score = 3264032.16
+|/  
+| * f5f6e96 (researcher-14) Sort + exponential quantile proxy weights (bypass weight estimation) | score = 6,614,956
+|/  
+| * 43b5305 (researcher-8) Explore 3 fundamentally different approaches (random splits+SGD, sort-all+1v2-diff, snake draft+group-cmp) | all scored worse than baseline (5.5M, 6.9M, 17M vs 3.8M baseline)
+|/  
+| * 73fa720 (researcher-9) Alternative weight estimation approaches (parametric calibration, direct group comparison, prefix-sum breakpoints) | score = all scored worse than baseline (best: 4.84M vs baseline 3.8M)
+|/  
+| * 3de23f0 (researcher-10) Sort-all + theoretical weight estimation approaches (spacing/order-stats/calibration) | score = 6393418.86
+|/  
+| * 482a42e (researcher-5) Prefix-sum calibration and order-statistics approaches for weight estimation | score = all variants worse than baseline (best 4,664,490 vs baseline 4,664,490)
+|/  
+| * 4308fde (researcher-2) Sort + exponential order statistics + binary search calibration for weight estimation | score = 5564040.98
+|/  
+| * a7ea4f3 (researcher-4) Order statistics weight estimation for Exp distribution | score = 4932691
+|/  
+| * a5b3e86 (researcher-1) Exponential order statistics weight estimation with group-sum refinement | score = 4140534.02
+|/  
+| * ca23d79 (researcher-3) Sort + exponential order statistics + SA partition | score = 5549524
+|/  
+* d606657 (HEAD -> master, researcher-7) initial

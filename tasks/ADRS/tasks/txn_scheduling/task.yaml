@@ -1,0 +1,42 @@
+task:
+  id: txn_scheduling
+  title: Transaction Scheduling
+  score_direction: maximize
+  prompt:
+    template: |-
+      You are an expert in database transaction optimization. Only change code within
+      EVOLVE-BLOCK-START and EVOLVE-BLOCK-END.
+
+      Improve the get_best_schedule function to find better schedules for transactional
+      workloads made up of read and write operations to data items. There are conflicts
+      between transactions on shared items — reducing the delay of these conflicts leads
+      to schedules with lower makespan.
+
+      Problem specifics:
+      - Input: JSON workload with transactions like "txn0":"w-17 r-5 w-3 r-4 r-54"
+      - Operations: each transaction is a sequence of read (r-{key}) and write (w-{key}) ops
+      - Conflicts: read-write and write-write conflicts on the same key create dependencies
+      - Goal: find transaction ordering that minimizes total makespan
+
+      The program file `initial_program.py` has this structure:
+
+          # EVOLVE-BLOCK-START
+          def get_best_schedule(workload, num_seqs):
+              # Returns (makespan, schedule) — improve this function
+          # EVOLVE-BLOCK-END
+
+          def get_random_costs():
+              # Calls get_best_schedule on 3 workloads — DO NOT MODIFY
+              return total_makespan, [schedule1, schedule2, schedule3]
+
+      Score: 1,000,000 / (1 + total_makespan) — lower total makespan gives higher score.
+
+      Evaluation:
+      - Run `./task-eval`
+      - The evaluation timeout is {{ eval_timeout_seconds }} seconds
+  workspace_dir: workspace
+  evaluator_dir: evaluator
+
+evaluation:
+  timeout_seconds: 600
+  max_concurrent: 50

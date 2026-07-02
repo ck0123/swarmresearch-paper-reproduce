@@ -1,0 +1,22 @@
+{
+  "firstStartTime": "2026-05-22T06:49:31.746Z",
+  "opusProMigrationComplete": true,
+  "sonnet1m45MigrationComplete": true,
+  "seenNotifications": {},
+  "migrationVersion": 13,
+  "userID": "5ff84d5c0c48ad2201d42ec02008fcf0b26a91ca08fcdc2ef77e0ca7b34d4347",
+  "skillUsage": {
+    "shepherd": {
+      "usageCount": 1,
+      "lastUsedAt": 1779432574138
+    },
+    "explorer": {
+      "usageCount": 25,
+      "lastUsedAt": 1779472218650
+    },
+    "optimizer": {
+      "usageCount": 4,
+      "lastUsedAt": 1779468264607
+    }
+  }
+}

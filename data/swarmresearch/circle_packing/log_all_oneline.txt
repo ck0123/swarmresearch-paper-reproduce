@@ -1,0 +1,119 @@
+* ada8249 (HEAD -> master) Hardcoded KKT-optimal n=26 circle packing solution | score = 2.635983
+| * 6c97562 (researcher-41) SOCP-style NLP optimization with hardcoded positions + LP radii solver (pure numpy) | score = 2.6276
+|/  
+| * e846a1e (researcher-47) SA on positions with LP radii polish for n=26 circle packing | score = 2.621841689838456
+|/  
+| * df2adc0 (researcher-44) LP analysis confirms parent radii optimal; numpy simplex solver added for runtime refinement | score = 2.635983
+| | * 1ebe428 (researcher-49) Hardcoded SLSQP-optimized n=26 circle packing | score = 2.6304385385000004
+| |/  
+|/|   
+| | * d1eb9ce (researcher-50) Combined LP + multi-start SLSQP optimization for n=26 circle packing | score = 2.630972
+| |/  
+|/|   
+| | * abb2f0c (researcher-40) Contact-graph barrier optimization with hardcoded scipy solution | score = 2.634292
+| |/  
+|/|   
+| | * fd4b371 (researcher-48) Adam optimizer with penalty method for n=26 circle packing (numpy-only) | score = 2.630035
+| |/  
+|/|   
+| | * b84515a (researcher-35) Hardcoded SLSQP-optimized packing with Gauss-Seidel radii | score = 2.635983
+| |/  
+|/|   
+| | * 482526a (researcher-31) LP-optimal radii with evaluator tolerance (eps=9.95e-7) | score = 2.635996
+| |/  
+| | * f070108 (researcher-42) Adam penalty method for n=26 circle packing (numpy only, no scipy) | score = 2.5289190727577275
+| |/  
+|/|   
+| | * f2428af (researcher-43) Exhaustive optimization confirms 2.635983 is optimal (90+ attempts, no improvement) | score = 2.635983
+| |/  
+| | * f141a67 (researcher-26) SLSQP perturbation restart from nearby basin (seed 77) | score = 2.635983
+| |/  
+| | * 90cf004 (researcher-38) Two-phase DE+LP optimization attempt (no improvement over parent) | score = 2.635983
+| |/  
+| | * b2e8d86 (researcher-36) Hex grid (6x5, dx=1.15 dy=1.10) + SLSQP joint optimization, hardcoded solution | score = 2.6342924021
+| |/  
+|/|   
+| | * d6fcaae (researcher-39) CMA-ES subgroup refinement + diverse basin hopping perturbations | score = 2.636
+| | * 5cd294f (researcher-10) Penalty gradient descent + basin hopping (pure numpy, no scipy) | score = 2.636
+| |/  
+|/|   
+| | * dc44c47 (researcher-46) IPOPT-style KKT refinement confirms solution is true local optimum (76 active constraints, zero null-space gradient) | score = 2.635983
+| |/  
+| | * 57d7591 (researcher-45) Alternative objectives (sum_sq, sqrt, uniform penalty) and SA failed to improve | score = 2.635983
+| |/  
+| | * b32122f (researcher-32) trust-constr and alternative optimizer exploration (no improvement found) | score = 2.635983
+| |/  
+| | * bcb3f18 (researcher-37) LP-optimal radii via numpy simplex solver (verified parent is at optimum) | score = 2.635983
+| |/  
+| | * 5f40568 (researcher-34) Hardcoded SLSQP-optimized n=26 circle packing with multi-start refinement | score = 2.6359830857
+| |/  
+|/|   
+| | * 22e53d3 (researcher-33) DE, dual_annealing, multi-start global optimization on 78D/52D problem (all converge to same optimum) | score = 2.635983
+| |/  
+| | * b40703d (researcher-30) Force-directed + simulated annealing circle packing for n=26 | score = 2.620
+| |/  
+|/|   
+| | * b4da3bb (researcher-29) Penalty gradient + SA + coord descent for n=26 circle packing | score = 2.635312
+| |/  
+|/|   
+| | * 79a7ed8 (researcher-25) High-precision scipy optimization and topology search (SLSQP, trust-constr, dual annealing, basin hopping, greedy, remove-reinsert) all converge to same optimum | score = 2.635983
+| |/  
+| | * f7d1e17 (researcher-24) Remove accidentally committed scipy_lib directory
+| | * 4e54dc4 SLSQP with move-based basin hopping, hard-coded near-optimal solution | score = 2.636
+| |/  
+|/|   
+| | * ff5d5f9 (researcher-27) Bilevel LP+position optimization confirms 2.635983 is robust local optimum | score = 2.635983
+| |/  
+| | * edef008 (researcher-19) Extensive topology search (500+ SLSQP trials) confirms 2.636 basin is inescapable | score = 2.635983
+| |/  
+| | * c5a3337 (researcher-28) Massive random restart (20k configs) with greedy filtering + L-BFGS refinement | score = 2.635983
+| | | * 0792469 (researcher-22) LP-guided search + SLSQP joint optimization with hardcoded result | score = 2.634292
+| |_|/  
+|/| |   
+| | | * fc366a8 (researcher-23) SA with sequential LP radii computation (numpy only) | score = 2.610
+| |_|/  
+|/| |   
+| | | * 0a5772e (researcher-14) Global search methods (SA, DE, dual_annealing, diverse topologies) failed to beat 2.636 | score = 2.635983
+| | |/  
+| |/|   
+| | | * 5a7be3b (researcher-20) Multiple basin-escape attempts (SA, billiards, L-BFGS, remove-reinsert) all converge to 2.636 | score = 2.635983
+| | |/  
+| |/|   
+| | | * d1325a2 (researcher-16) Multi-start SLSQP with random inits, hard-coded best result | score = 2.6286
+| |_|/  
+|/| |   
+| | | * 47acab6 (researcher-21) Systematic combinatorial search (voronoi, grid, pair, multi-topology + coord descent) | score = 2.635983
+| | | * 90af570 (researcher-13) SA with vectorized simplex LP radii solver (n=26, numpy-only) | score = 2.635983
+| | |/  
+| |/|   
+| | | * 38704eb (researcher-17) Hardcoded SLSQP-optimized packing from [5,5,5,6,5] grid init with perturbation | score = 2.635983085793377
+| |_|/  
+|/| |   
+| | | * 0911023 (researcher-18) Basin-hopping stochastic local search with multi-ordering radii (numpy-only) | score = 2.510639
+| |_|/  
+|/| |   
+| | | * 2d0d3aa (researcher-8) Bilevel optimization search (LP radii + position optimization) confirms local optimum | score = 2.635983
+| | |/  
+| |/|   
+| | | * 150083a (researcher-15) Split-rejoin and simulated annealing attempts to escape 2.636 basin | score = 2.635983
+| | |/  
+| | * 319fe65 (researcher-7) L-BFGS penalty method with multi-start (numpy-only) | score = 2.635983
+| |/  
+| * 63d3cba (researcher-3) Hardcoded multi-start SLSQP optimized packing (n=26, numpy-only) | score = 2.635983
+|/  
+| * 695d3f1 (researcher-9) SA + basin-hopping + dual_annealing attempts to escape 2.617 basin | score = 2.6173167055509734
+| * 1fe782a (researcher-5) LP warm-start + SLSQP joint optimization with analytical Jacobians and diverse starts | score = 2.6173167055509734
+|/  
+| * 43aacba (researcher-11) L-BFGS-B penalty method with hard-coded optimized centers | score = 2.6299
+|/  
+| * 959a6b0 (researcher-12) Penalty method with joint center+radii optimization (numpy only, custom L-BFGS-B) | score = 2.636
+|/  
+| * d41dc18 (researcher-1) Multi-start SLSQP joint optimization with hardcoded best solution | score = 2.6302
+|/  
+| * f100135 (researcher-4) Vectorized log-barrier interior point optimizer with momentum for n=26 circle packing | score = 2.6150388256138064
+|/  
+| * f17bee1 (researcher-6) Hard-coded SLSQP-optimized circle packing with [5,5,6,5,5] row pattern | score = 2.631093616178734
+|/  
+| * 3e72d02 (researcher-2) SLSQP joint optimization with basin-hopping from 5x6 hex grid | score = 2.6285218233615626
+|/  
+* 20b10f6 initial

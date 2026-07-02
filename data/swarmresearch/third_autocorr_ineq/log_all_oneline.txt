@@ -1,0 +1,124 @@
+* ef47c25 (researcher-48) JAX p-norm gradient descent + iterative perturbation search (N=800, 50k steps, 200 perturbation rounds) | score = 0.9962
+| * bcf7ba5 (researcher-39) Multi-res search + fine polish refinement (crossover/structured inits don't help) | score = 0.9994
+| | * 419b44b (researcher-47) cos2+0.3 init with p-norm annealing + L-BFGS-B at float64 | score = 0.9989
+| |/  
+|/|   
+| | * a5a3829 (researcher-50) High-N (N=2500) experiments: upsampling degrades, optimization slower, no improvement over N=800 | score = 0.9994
+| |/  
+| | * 571b67d (researcher-49) Smooth perturbations + upsampling/downsampling experiments (both failed to improve) | score = 0.9994
+| |/  
+| | * cac2b6d (researcher-45) Low-D DCT global search + L-BFGS refinement loop | score = 0.9994
+| |/  
+| | * 0ebeac5 (researcher-42) Update findings with three-tier resolution results and failed experiments
+| | * c880358 Three-tier resolution (N=100->300->800) for better basin identification | score = 0.9997
+| |/  
+| | * bda7d49 (researcher-43) High-N (N=3000) optimization with p=4096 polish phase | score = 0.9995
+| |/  
+| | * 8fb1a17 (researcher-36) Multi-resolution search + float64 L-BFGS-B combined approach | score = 0.9994
+| | * 9d9694f Prepare multi-parent researcher-36 (researcher-23 + researcher-27)
+| |/  
+| | * 738553d (researcher-37) 30 seeds + aggressive hard refinement with varied perturbation/lr strategies | score = 0.9994
+| |/  
+| | * 7b71d84 (researcher-41) Multi-resolution + float64 L-BFGS-B at extreme p (up to 1M) | score = 0.9994
+| |/  
+| | * f018f27 (researcher-44) Evaluator-matched convolution (2N-1 full mode) + p=4096/8192 phases + extended hard refinement | score = 0.99942
+| |/  
+| | * 46b4d58 (researcher-38) Float64 L-BFGS-B refinement + extra hard polish from converged JAX solution | score = 0.9994
+| |/  
+| | * 2a3e423 (researcher-40) Add L-BFGS-B refinement after Adam p-norm sweep (p=4096-32768) for precise convergence | score = 0.9994
+| |/  
+| | * f89644a (researcher-46, researcher-31) Update findings with gradient-informed refinement results
+| | * be64e5f 20 seeds + gradient trials + high-p re-polish | score = 0.9994126203688612
+| | * 4136c6d 30 seeds + 25 gradient trials with smaller noise | score = 0.9994126203688612
+| | * 00814e6 Iterative gradient perturbation with 20 trials from improving best | score = 0.9994124951666764
+| | * f7d2515 Gradient-informed hard max refinement with descent direction perturbations | score = 0.9994108362637418
+| |/  
+| | * e6e1f8c (researcher-14) Evolutionary optimization (multi-restart + crossover + perturbation escape) | score = 0.9961500924351772
+| |/  
+|/|   
+| | * 0710702 (researcher-33) Perturb + high-p re-sweep and Chebyshev basis experiments | score = 0.9994
+| |/  
+| | * a015bbe (researcher-34) Alternating hard-max + top-k peak flattening refinement | score = 0.9994
+| |/  
+| | * 8e98deb (researcher-32) Adam sweep + L-BFGS-B high-p polisher (p=2048→65536) + extended hard max refinement | score = 0.9994
+| |/  
+| * 1ba265b (researcher-23) Multi-resolution search (N=100 broad, N=800 refine) + hard max refinement | score = 0.9994
+| | * ec3ff77 (researcher-30) Hybrid Adam(LSE beta=50) + L-BFGS-B curriculum optimization | score = 0.9932614685084972
+| |/  
+|/|   
+| | * 3a5be4e (researcher-20) Two-phase Lp progressive sharpening with log-sum-exp (p:2->128->8192, N=1000) | score = 0.9986
+| |/  
+|/|   
+| | * 4c2cd64 (researcher-26) Update findings.md with float64 and extended refinement results
+| | * 75f078f Longer refinement rounds (50K steps), fill more budget | score = 0.9987
+| | * 743ae8c Full float64 pipeline, Lp p=6->20->60->120->exact seeding + 18 refinement | score = 0.9987
+| | * 7f89eb7 Float64 refinement, deeper convergence from Lp seeding | score = 0.9986
+| | * 6ab8539 N=2000, deeper refinement (22 rounds, longer per round) | score = 0.9986
+| | | * c4cc150 (researcher-29) LogSumExp progressive sharpening + basin hopping for C3 minimization | score = 0.9924
+| |_|/  
+|/| |   
+| | | * de46dec (researcher-28) Extended Lp seeding (p=120,200) + deep refinement | score = 0.9987
+| | |/  
+| | | * 3cb7825 (researcher-35) Multi-resolution Lp with p-cycling at coarse level + log-space stability | score = 0.9988
+| |_|/  
+|/| |   
+| | | * 455d01c (researcher-27) Hybrid Lp-seeding + float64 L-BFGS-B (p=1k-200k) + Adam polishing, N=2000 | score = 0.9989
+| | |/  
+| | * 079868a (researcher-25) Update findings.md with Lp-norm and refinement results
+| | * 9fedc45 N=2000, longer Lp seeding + 18 refinement rounds (5 LR scales) | score = 0.9986
+| | * f0b7774 N=2000, Lp seeding + 12 progressive refinement rounds, no perturbation | score = 0.9985
+| | * 68cc4ce Lp seeding + extended progressive refinement (8 rounds) | score = 0.9980
+| | * e638f60 Lp seeding + LSE perturbation + 5 refinements | score = 0.9979
+| | * acedb26 Progressive Lp-norm (p=6->20->60->exact) with iterative perturbation | score = 0.9979
+| | * d0b1542 (researcher-11) Iterative perturbation with fori_loop JIT, N=1500, diverse inits | score = 0.9975
+| | | * 474f094 (researcher-24) Multi-start gradient + iterative perturbation refinement (80 seeds, N=800) | score = 0.9882506235372469
+| |_|/  
+|/| |   
+| | | * c321c61 (researcher-22) Equioscillation penalty + Fourier parameterization experiments | score = 0.9982
+| | |/  
+| |/|   
+| | | * ae4f1a1 (researcher-17) Lp-norm Adam + L-BFGS second-order refinement (p→32768) | score = 0.9981
+| | | | * 926a5e1 (researcher-21) Update findings with iterations 4-5 results (multi-scale, softmax, CMA-ES all failed)
+| | |_|/  
+| |/| |   
+| * | | 812c217 (researcher-16) Update findings with optimizer iteration results
+| * | | 3180635 3 seeds through p-norm sweep + 25 hard refinement trials | score = 0.9985
+| * | | bc46a67 More steps at high p + p=4096 phase + smaller perturbations in hard refinement | score = 0.9983
+| | |/  
+| |/|   
+| | | * 1e55574 (researcher-7) Multi-restart Adam + L-BFGS-B with logsumexp temperature annealing for C3 minimization | score = 0.993710660025798
+| |_|/  
+|/| |   
+| | | * ae5295a (researcher-18) Mixed-norm annealing (alpha*hardmax + (1-alpha)*pnorm) with progressive alpha and p increase | score = 0.9981
+| | |/  
+| |/|   
+| * | 182367b (researcher-3) Progressive Lp-norm sharpening (p=4->2048) + hard max Adam refinement with perturbation restarts | score = 0.9981
+|/ /  
+| | * a694170 (researcher-13) Basin-hopping + multi-resolution gradient optimization with candidate reordering | score = 0.9972826721288865
+| | * 04a94f6 (researcher-5) Multi-resolution Fourier-basis curriculum optimization with 200 diverse seeds | score = 0.9955171947518177
+| |/  
+|/|   
+| | * 8c18014 (researcher-15) Multiscale Lp-to-smoothmax with iterative perturbation refinement (N=1200) | score = 0.9971699578767755
+| |/  
+|/|   
+| | * f8a0ea0 (researcher-19) Update findings.md with Lp-norm experiment results
+| | * 8730e7e 3-phase Lp (p=8→512→exact), N=1000, 20 restarts, lr=0.01 | score = 0.9972482199102303
+| | * 019d155 3-phase Lp-norm (p=8 → p=128 → exact), 15 restarts, N=1200 | score = 0.9968472669616163
+| |/  
+| | * 0552cd2 (researcher-12) N=1400 with 25 random restarts and different seed family (seed*251+1337) | score = 0.9971
+| |/  
+| * 0539791 (researcher-9) JAX Adam with 20 random restarts, smooth log-sum-exp then exact objective | score = 0.9968
+|/  
+| * 226422f (researcher-1) Logsumexp smooth-max + Adam + L-BFGS cascade with multi-restart | score = 0.9963986635622806
+|/  
+| * 223f361 (researcher-6) Three-phase Adam optimization with log-sum-exp smooth max and diverse restarts | score = 0.9945
+|/  
+| * 49278a3 (researcher-2) Fourier search + direct Adam + L-BFGS polish pipeline for C3 optimization | score = 0.9942775296845464
+|/  
+| * 9a44a3e (researcher-10) Log-sum-exp smoothed max with Adam multi-start optimization for C3 bound | score = 0.996208635513818
+|/  
+| * f678c53 (researcher-4) Fourier parameterization with log-sum-exp smooth max and Adam optimizer | score = 0.9870295371602864
+|/  
+| * 29f546c (researcher-8) LogSumExp smooth-max with Adam multi-restart + L-BFGS coarse-to-fine refinement | score = 0.9930
+|/  
+* 6eb3835 (HEAD -> master) initial

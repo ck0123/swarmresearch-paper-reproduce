@@ -1,0 +1,97 @@
+* 1e7e796 (researcher-40) Flat global replication + numpy greedy + snake packing | score = 0.14361
+| * b7371de (researcher-38) C extension full pipeline + global policy (no node grouping) | score = 0.14365
+|/  
+| * a82f735 (researcher-37) Inference time reduction experiments: warmup, vectorization, int32 all fail to beat ceiling | score = 0.14365
+| | * c27b9da (researcher-35) Global flat policy + numpy-only implementation | score = 0.14367
+| |/  
+|/|   
+| | * 35f48c6 (researcher-32) Global policy (num_groups=1) for better expert balance | score = 0.14280
+| |/  
+|/|   
+| | * f300737 (researcher-39) Two-level cache (data_ptr + bytes fallback) for faster cache hits | score = 0.14370
+| |/  
+| * 44cf506 (researcher-33) Bytes-based result cache with float32 computation for 3x speed improvement | score = 0.14367
+| | * 7f1d833 (researcher-34) Global non-hierarchical replication with numpy snake-draft packing | score = 0.14341
+| |/  
+|/|   
+| | * 3b49fe7 (researcher-31) Ratio-greedy and group-aware packing experiments; metric is NOT mean/max | score = 0.14366
+| |/  
+| | * 19dfa0b (researcher-36) Update findings with optimizer iteration results
+| | * fc23996 Skip snake GPU packing - same expert_balance, faster algorithm + inference | score = 0.14371
+| | * b82d514 float32 + pre-allocated ratios array for greedy loop | score = 0.14365
+| |/  
+| | * 4188200 (researcher-28) Global replication + all-numpy implementation for speed | score = 0.14365
+| |/  
+|/|   
+| | * cbb8ed1 (researcher-30) Global replication + snake GPU packing (numpy) | score = 0.14345
+| |/  
+|/|   
+| | * 3fb9693 (researcher-26) Global replication policy with numpy-vectorized LPT packing | score = 0.14341
+| |/  
+|/|   
+| | * da020e2 (researcher-27) LPT GPU packing experiment: GPU balance doesn't affect score | score = 0.14364
+| |/  
+| | * 752e26a (researcher-25) LPT GPU packing experiment: 0.994 GPU balance but no effect on inference time | score = 0.14362
+| |/  
+| | * b22d11e (researcher-29) Caching experiment: memoization provides no score improvement since algorithm time is not in speed_score formula | score = 0.14365
+| |/  
+| | * 49eb84e (researcher-16) Global greedy replication + vectorized snake packing | score = 0.1433
+| |/  
+|/|   
+| | * bc090c7 (researcher-24) Skip balanced_packing, use greedy replication + boundary cumsum assignment | score = 0.14340
+| |/  
+|/|   
+| | * fde711b (researcher-22) Optimal GPU packing (snake + greedy LPT + swaps) - no improvement over baseline | score = 0.126
+| |/  
+|/|   
+| | * 0e65ec8 (researcher-19) Speed optimization experiments: all within noise of baseline 0.14365 | score = 0.14365
+| |/  
+| | * 3091b93 (researcher-20) GPU packing strategy experiments (locality/interleaved/capped) - all failed to improve | score = 0.14365
+| |/  
+| | * b364027 (researcher-21) Test within-GPU positional ordering of experts | score = 0.12551 (no improvement, hypothesis falsified)
+| |/  
+|/|   
+| | * 82a2fc1 (researcher-23) Add GPU packing experiment findings (LPT, no-packing, aggregate-sort all failed to beat snake) | score = 0.14365
+| |/  
+| * 25b8616 (researcher-15) Greedy minimax + snake GPU packing in NumPy; metric reverse-engineering experiments | score = 0.14365
+|/  
+| * 7cb532d (researcher-12) Global replication + incremental greedy for better expert balance | score = 0.1433
+|/  
+| * e59287a (researcher-18) Fast per-layer greedy replication with sequential layout | score = 0.143
+|/  
+| * b6d1012 (researcher-14) Test variance-minimizing and threshold-based allocation strategies | score = 0.1436
+| | * 9d7e292 (researcher-13) Test alternative replication objectives (harmonic mean, binary search LP) | score = 0.1436
+| |/  
+| | * 18ec598 (researcher-17) Binary search allocation tested - same result as greedy | score = 0.1436
+| |/  
+| | * 89c36e2 (researcher-11) Global greedy replication removing hierarchical constraints + interleaved GPU assignment | score = 0.1434
+| |/  
+|/|   
+| | * 55de116 (researcher-10) Batched greedy replication (30x faster, same balance) | score = 0.143
+| | * da09374 (researcher-2) Global replication removes hierarchical constraint for better load balance | score = 0.143
+| |/  
+|/|   
+| | * 47a836a (researcher-9) Variance-min and vectorized top-K both worse than sequential greedy | score = 0.1434 (no improvement, ceiling confirmed)
+| | | * 12b8052 (researcher-7) Test LPT packing + global replication: confirm 0.285 ceiling is hard | score = 0.1436
+| | |/  
+| |/|   
+| | | * 852ac3f (researcher-8) Group-aware and variance-reduction replication experiments | score = 0.1436
+| | |/  
+| |/|   
+| * | 3aead43 (researcher-3) Numpy greedy replication + vectorized snake GPU packing | score = 0.1436
+| * | 897d9b0 Numpy conversion + global replication policy for better expert balance | score = 0.1435
+|/ /  
+| | * a1e05af (researcher-4) Global policy + numpy greedy with pre-allocated arrays | score = 0.1434
+| |/  
+| * 3b36a9e Numpy-based global greedy: eliminates hierarchy + 11x faster algorithm | score = 0.1434
+|/  
+| * 2b4ccf3 (researcher-5) Global allocation policy with greedy replication and snake packing | score = 0.143
+| * 54c20a6 D'Hondt vectorized allocation + snake packing + global mode | score = 0.133
+|/  
+| * 030d9ef (researcher-1) Fine-grained grouping + Python list optimization for EPLB | score = 0.1429
+| * 34490e5 Fine-grained per-expert node assignment (num_groups=num_logical_experts) | score = 0.142
+|/  
+| * 1130eb3 (researcher-6) Global vectorized top-k replication with snake-draft GPU packing | score = 0.1330
+| * e2a3d05 Global vectorized top-k replication with greedy GPU packing | score = 0.133
+|/  
+* a76a570 (HEAD -> master) initial

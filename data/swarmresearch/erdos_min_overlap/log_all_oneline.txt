@@ -1,0 +1,73 @@
+* 637caa9 (researcher-28) iter2: multiple random seeds + smaller delta cap (5e-6)
+| * 373df2a (researcher-37, researcher-23) Successive linearization LP with stochastic kicks for Erdos overlap | score = 0.3810286652737049
+| | * 51ed170 (researcher-36, researcher-29) Kelley cutting plane with accumulated constraints improves over SLP | score = 0.38091322904864733
+| | | * 21b6c26 (researcher-27) Update findings with higher-resolution experiments
+| | | * fe4d7c0 n=200 with 400k deep subgradient and fine refinement | score = 0.38107
+| | | * 4cd1f90 Pure n=200 with 300k steps and fine subgradient refinement | score = 0.38107
+| | | * e0d9e0c Upsample n=200 to n=400 with subgradient refinement | score = 0.38108
+| | | * 65725ee placeholder
+| | | | * 20b0978 (researcher-22) Subgradient + mass-preserving coordinate descent with np.correlate | score = 0.38108
+| | | | * df23178 placeholder
+| | | |/  
+| | | | * 4904188 (researcher-32) Long single-resolution temp annealing (30->2000) with 800k Adam steps at n=800 | score = 0.38099
+| | | | * 581948c (researcher-25) High-resolution smooth-max Adam optimization with multi-resolution upscaling (n=800->2000->4000) | score = 0.38099
+| | |_|/  
+| |/| |   
+| | | | * 4efaf72 (researcher-30) Multi-resolution SLP with tunneling (n=150,200,250) | score = 0.38092803420350296
+| | | |/  
+| | |/|   
+| | | | * a1888a1 (researcher-33) iter2: multiple random seeds for broader basin exploration
+| |_|_|/  
+|/| | |   
+* | | | ca4b479 Tighter SLP with progressive threshold, subgradient polish, finer line search | score = 0.3809091461361574
+| |/ /  
+|/| |   
+* | | a149f11 (researcher-17) Multi-start SLP with symmetrization and cross-pollination for minimax overlap | score = 0.38093537033523805
+|/ /  
+| | * 0cce090 (researcher-16) Update findings with iteration results from researcher-16
+| |/  
+| * 37607da Weighted multi-shift subgradient + coordinate descent at n=200 | score = 0.38107
+| | * ddcb7f4 (researcher-21) Two-stage subgradient (medium+fine lr) at n=200 | score = 0.38107
+| |/  
+| | * 888e8e1 (researcher-13) Parametric DE with 20-knot PL + Powell/NM polish | score = 0.38236
+| |/  
+|/|   
+| | * 14cd3c1 (researcher-19) Subgradient minimax with Polyak step size for Erdos overlap | score = 0.38146392761777026
+| |/  
+|/|   
+| | * 6511e9b (researcher-14) Gradient + SA optimization at n=200 | score = 0.38155
+| |/  
+|/|   
+| | * ed953d1 (researcher-18) SLP (Sequential Linear Programming) with trust region and line search | score = 0.3868
+| |/  
+|/|   
+| | * b1eada6 (researcher-7) DE + NM on interpolated control points (20→40 levels) | score = 0.38236
+| |/  
+|/|   
+| | * 5317551 (researcher-15) Saddle-point L-BFGS-B with log-sum-exp smooth max and temperature annealing | score = 0.38240
+| |/  
+|/|   
+| | * 9ee5bf2 (researcher-6) Simulated annealing with L-BFGS-B warm start for Erdos overlap | score = 0.38205
+| |/  
+|/|   
+| | * 47cf0a9 (researcher-8) Cascaded Adam LR schedule (0.005->0.00001) with 9.5M steps on N=200 | score = 0.38124
+| |/  
+|/|   
+| | * 1aad459 (researcher-11) Add Adam fine-tuning phase to momentum subgradient; plateau at 0.38108 persists | score = 0.38108
+| |/  
+| * 18cc274 (researcher-4) Projected subgradient with momentum for Erdos overlap minimization | score = 0.38108
+|/  
+| * 65e6744 (researcher-12) Fourier-parameterized DE global search + JAX gradient refinement | score = 0.381118
+| * 9dde46e (researcher-1) Multi-restart augmented Lagrangian optimization with multi-phase refinement | score = 0.381098
+|/  
+| * ad69bc9 (researcher-9) Hybrid basin-hopping + Powell + coordinate descent with diverse perturbations | score = 0.3841530772071894
+|/  
+| * 2867a45 (researcher-10) CMA-ES with step function parametrization (40-80 segments, multi-phase with restarts) | score = 0.3824356867259646
+|/  
+| * da02a15 (researcher-2) Projected GD + Adam subgradient for Erdos overlap (triangle init, 3-phase) | score = 0.3811961439911264
+|/  
+| * 0d93054 (researcher-5) Multi-resolution L-BFGS-B with smooth max annealing + Powell refinement | score = 0.38119
+|/  
+| * 1a206ae (researcher-3) Nesterov accelerated projected gradient with soft-max annealing and multi-start | score = 0.38115
+|/  
+* 5ec916c (HEAD -> master, researcher-35, researcher-34, researcher-31, researcher-26, researcher-24, researcher-20) initial

@@ -1,0 +1,12 @@
+{
+    "model": "claude-opus-4-8",
+    "effortLevel": "high",
+    "permissionMode": "bypassPermissions",
+    "permissions": {
+        "deny": ["WebSearch"]
+    },
+    "env": {
+        "BASH_DEFAULT_TIMEOUT_MS": "7200000",
+        "BASH_MAX_TIMEOUT_MS": "7200000"
+    }
+}

@@ -1,0 +1,37 @@
+* b23a227 (researcher-22) Exact branch-and-bound bin packing solver confirms global optimality | score = 26.255971749535238
+| * 813a6ed (researcher-25) Simplified algorithm: remove ejection chains and time management, keep moves+swaps only | score = 26.256
+| | * 8aa9df8 (researcher-20) Analytical target + cluster re-optimization + iterated local search | score = 26.256
+| | * e08b53b (researcher-13) Binary search on target KVPR + heuristic bin-packing feasibility + local search | score = 26.256
+| |/  
+| * 573df17 (researcher-5, researcher-37, researcher-29) Multi-start greedy + local search with ejection chains | score = 26.256
+| * 8735f86 Multi-start greedy + local search (moves/swaps) for KVPR minimization | score = 26.255971749535238
+| | * 06eba6d (researcher-18) Binary search on target KVPR + FFD + local search (moves/swaps) | score = 26.233
+| |/  
+| | * 56fc37f (researcher-19) Binary search + diverse multi-start greedy + best-improvement local search | score = 26.256
+| |/  
+| | * 64d4392 (researcher-16) Update findings.md with exhaustive optimization attempts (all failed to improve 26.256)
+| | | * 71de277 (researcher-17) Update findings with MILP optimality proof | score = 26.255971749535238
+| |_|/  
+|/| |   
+| | | * 5a80463 (researcher-15) Binary search + randomized bin packing + SA with restarts | score = 26.255971749535238
+| | |/  
+| |/|   
+| | | * d998f2c (researcher-11) Exact branch-and-bound solver (confirms heuristic optimality) | score = 26.256
+| | |/  
+| | * fcf33d0 (researcher-36, researcher-28, researcher-21, researcher-2) Binary search + multi-start greedy + local search (moves/swaps) | score = 26.256
+| | * c8330cd Binary search binpack + multi-start greedy + local search (moves & swaps) | score = 26.256
+| |/  
+| | * 33e5aee (researcher-14) Multi-strategy greedy + local search with combined-weight reformulation | score = 26.256
+| |/  
+| | * 08a8158 (researcher-12) Enhanced local search with chain moves, all-pairs, cyclic rotations, ILS - confirmed parent optimality | score = 26.255971749535238
+| |/  
+|/|   
+* | 651cc38 (researcher-4, researcher-30) Binary search + bin packing + local search for KVPR minimization | score = 26.255971749535238
+* | e428476 Binary search + randomized bin-packing + local search + SA for min-max KVPR | score = 26.255971749535238
+|/  
+| * 53d24db (researcher-3) Branch-and-bound confirms greedy+local search is globally optimal | score = 26.25
+| * cc00a26 Multi-start greedy + local search (move/swap) for GPU model placement | score = 26.25
+|/  
+| * 2a6f3ac (researcher-1) Binary search on target KVPR + bin-packing with local search refinement | score = 26.233211418294864
+|/  
+* 5230947 (HEAD -> master, researcher-9, researcher-8, researcher-7, researcher-6, researcher-35, researcher-34, researcher-33, researcher-32, researcher-31, researcher-27, researcher-26, researcher-24, researcher-23, researcher-10) initial

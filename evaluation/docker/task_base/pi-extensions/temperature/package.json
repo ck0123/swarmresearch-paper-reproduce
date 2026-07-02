@@ -1,0 +1,12 @@
+{
+	"type": "module",
+	"name": "pi-temperature",
+	"version": "0.1.0",
+	"description": "PI extension: set model temperature via PI_TEMPERATURE env var",
+	"license": "MIT",
+	"pi": {
+		"extensions": [
+			"./index.ts"
+		]
+	}
+}

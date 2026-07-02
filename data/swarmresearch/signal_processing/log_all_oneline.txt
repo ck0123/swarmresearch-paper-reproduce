@@ -1,0 +1,105 @@
+* 6f6a1d4 (researcher-49) Median(7) + L1 trend filter with adaptive lambda binary search and ADMM rho fix | score = 0.762
+| * e25b107 (researcher-48) Huber-loss L1 trend filter via IRLS-ADMM with median pre-smoothing and adaptive reversal suppression | score = 0.735
+|/  
+| * 4abb491 (researcher-47) Tested radical post-processing (2nd L1, isotonic, TV, weighted L1) - all failed | score = 0.803 (no improvement over parent)
+| | * cea8ba9 (researcher-50) ADMM variants tested (over-relaxed, adaptive rho, tight convergence) - none improved | score = 0.803
+| |/  
+| | * 5f038f9 (researcher-46) Update findings with micro-tuning results: lambda=66 optimal, tighter tol hurts
+| | * 28e46b7 iter4: short reversal run_len<=8 amp<0.06 | score = 0.803
+| | * 4fcbec0 iter2: lambda=66 rho=13 | score = 0.803
+| |/  
+| * 3a258d9 (researcher-41) Update findings with fine-tuning results
+| * 2714c10 iter4: suppression relative=0.75 absolute=0.38 | score = 0.803
+| * f1c56f7 iter2: lambda=65, rho=13 with median=7 | score = 0.803
+| | * 7fad07c (researcher-45) L1 trend + TV-on-differences + piecewise-linear segmentation | score = 0.740
+| |/  
+|/|   
+| | * b2f73e7 (researcher-44) Wavelet shrinkage (cycle-spinning Haar) + L1 trend filter (ADMM) + iterative reversal suppression | score = 0.721
+| |/  
+|/|   
+| | * f768097 (researcher-42) Tested alternative pre/post-smoothing methods; none beat median(7)+L1(60) parent | score = 0.802
+| |/  
+| | * e150887 (researcher-43) Tested TV-1 slope denoising, aggressive suppression, other post-processing — all failed to beat 0.802 | score = 0.802
+| |/  
+| * 4556f6e (researcher-31) Median pre-smoothing (size=7) + L1 (lambda=60) + adaptive reversal suppression | score = 0.802
+| | * 66097f3 (researcher-40) Forward-backward EMA + L1 trend filtering (IRLS) + reversal suppression | score = 0.747
+| |/  
+|/|   
+| | * 42afcaa (researcher-38) Lambda=65 with adaptive suppression (rel=0.75, abs=0.38), tested noise-adaptive/HP/derivative | score = 0.800
+| | | * b7f2d88 (researcher-39) Quadratic (order=3) L1 trend filtering via ADMM with adaptive reversal suppression | score = 0.741
+| |_|/  
+|/| |   
+| | | * 69bd1ea (researcher-37) Parameter sweep confirms lambda=50, rel=0.7, abs=0.35 as optimal | score = 0.800
+| | |/  
+| | | * 6af0194 (researcher-36) Tested ensemble L1, HP filter, HP+L1 hybrid, reference-guided suppression — none break 0.800 plateau | score = 0.800
+| | |/  
+| | * d2fa552 (researcher-32) Lower lambda=50 with adaptive reversal suppression for better accuracy | score = 0.800
+| |/  
+| * 92b10f2 (researcher-29) Adaptive reversal suppression (relative amp threshold) replaces fixed threshold | score = 0.797
+| | * 4c13998 (researcher-35) HP trend filter two-pass with reversal suppression, noise-adaptive lambda | score = 0.748
+| |/  
+|/|   
+| | * 292001f (researcher-33) SSE-based and BIC-penalized reversal removal approaches (all underperform parent) | score = 0.797
+| | * 79b3efb (researcher-30) L1 + reversal suppression + error-bounded greedy segment merge | score = 0.797
+| | | * 305c79a (researcher-34) CUSUM piecewise-linear online filter with bidirectional averaging | score = 0.677
+| |_|/  
+|/| |   
+| | | * 68331fb (researcher-27) Gaussian smoothing (sigma=6) + greedy reversal suppression (target=10 slope changes) | score = 0.761
+| |_|/  
+|/| |   
+| | | * 8868933 (researcher-26) L1 + enhanced reversal suppression with zigzag detection | score = 0.792
+| | |/  
+| | | * 79d5c7c (researcher-28) Iteratively reweighted L1 trend filter + piecewise linear fit (6 segments) | score = 0.751
+| |_|/  
+|/| |   
+| | | * 57efaa0 (researcher-21) L1 + amplitude-based reversal suppression (confirmed plateau at ~0.793) | score = 0.793
+| | |/  
+| | * 73948ce (researcher-16) L1 + TV-1 slope denoising blend (alpha=0.4) + reversal suppression | score = 0.794
+| |/  
+| | * 4c19299 (researcher-25) DP piecewise-linear with continuity blending post-processing at segment boundaries | score = 0.737
+| | * 57d450f (researcher-19) DP piecewise-linear with recency-weighted least squares (penalty=16, weight=1.3) | score = 0.734
+| | * c20c015 (researcher-15) DP piecewise-linear segmentation with penalty-based breakpoint selection | score = 0.723
+| |/  
+|/|   
+| | * d4b7924 (researcher-23) Whittaker-Henderson smoothing with asymmetric weights and 3rd order penalty | score = 0.737
+| |/  
+|/|   
+| | * 75df4ce (researcher-22) IRL1 trend filter (reweighted L1 for L0 approx) + reversal suppression | score = 0.793
+| |/  
+| | * bf3c0a9 (researcher-24) Segment-wise monotonic fitting with dual-tier smoothing | score = 0.687
+| |/  
+|/|   
+| | * ea500cb (researcher-20) Two-pass L1 trend filter with reversal suppression | score = 0.783
+| |/  
+|/|   
+| | * eedb4b1 (researcher-18) L1 trend filter + reversal suppression (min_run=90, amp=0.5) | score = 0.790
+| | * f6d7ffa (researcher-13) L1 trend filter + TV-1 slope denoising two-stage approach | score = 0.777
+| | | * 09b1771 (researcher-17) Explored segment merging, iterative suppression, reanchoring — none beat parent | score = 0.793
+| | |/  
+| |/|   
+| * | 926a430 (researcher-11) L1 trend filter + reversal suppression post-processing (min_run=70, amp=0.35) | score = 0.793
+| |/  
+| | * 415be2e (researcher-12) L1 trend filter + breakpoint pruning (keep top 30% by magnitude) | score = 0.753
+| |/  
+| * acef5ec (researcher-5) L1 trend filter (ADMM) directly on raw signal, lambda=80 | score = 0.727
+|/  
+| * 9aa1546 (researcher-14) L1 trend filter (ADMM) with aggressive knot merging | score = 0.718
+| * 97714f9 (researcher-7) Piecewise-monotone filter with isotonic regression + CUSUM breakpoints | score = 0.627
+| | * 92bd280 (researcher-10) Regime-switching forward-backward Holt smoother with CUSUM trend-locking | score = 0.663
+| |/  
+|/|   
+| | * c1b49d2 (researcher-8) Drift-compensated Holt hysteresis (trend-consistent hold) | score = 0.582
+| | | * 5501a27 (researcher-9) Adaptive alpha with mild trend-continuation hysteresis | score = 0.581
+| | |/  
+| | * 2701a73 (researcher-4) Double exponential smoothing with trend-locking hysteresis | score = 0.576
+| |/  
+|/|   
+| | * b372b3f (researcher-6) Adaptive R Kalman + segment-merging post-processor | score = 0.599
+| |/  
+| * 63a4e17 (researcher-1) Kalman filter with RTS smoother + velocity trend-locking | score = 0.586
+|/  
+| * da96a9c (researcher-3) Causal Savitzky-Golay + light hysteresis filter | score = 0.505
+|/  
+| * 6e3ef23 (researcher-2) Savitzky-Golay + DEMA + hysteresis reversal suppression + short-run merging | score = 0.518
+|/  
+* e65a177 (HEAD -> master) initial

@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "pi-turn-limit",
+  "version": "0.1.0",
+  "description": "PI extension to enforce subagent turn limits",
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

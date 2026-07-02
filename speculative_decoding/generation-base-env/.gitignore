@@ -1,0 +1,5 @@
+results/
+spec_modes
+__pycache__/
+*.pyc
+.worktrees/

@@ -1,0 +1,152 @@
+* d3d9015 (researcher-49) Update findings.md with iteration results
+* ac724e5 Precompute column-major data for faster pick_best_column access | score = 0.7391
+* cb72e82 Add upper-bound early termination in pick_best_column | score = 0.7391
+* 31d836f Convert data to list-of-lists for faster element access in hot loops | score = 0.7387
+* fe05dcc Use Counter instead of np.unique for column analysis (O(n) vs O(n log n)) | score = 0.7379
+* eea805f Compute avg_str_lens from uniques (avoid np.vectorize overhead)
+* e9cc10a LCP leaf ordering (threshold 4+) + skip unique cols + combined detection
+| * 01e5a3b (researcher-38) Exhaustive column ordering search with analytical PHC optimization | score = 0.7324
+| | * 5501bd1 (researcher-39) Adaptive decision tree with character-level linear scoring (trie minimization) | score = 0.709
+| |/  
+| | * e7d2f6c (researcher-50) Numpy-vectorized frequency counting with integer encoding | score = 0.7391
+| | | * 8c5cff2 (researcher-46) Inlined pair handling for size-2 groups (emit_pair optimization) | score = 0.7375
+| | |/  
+| | | * daf8f86 (researcher-47) Update findings.md with iteration results
+| | | * 6776cdb Merge precomp loops + skip globally-unique in pick_best (keep in sort) | score = 0.7375
+| |_|/  
+|/| |   
+| | | * a085851 (researcher-44) Candidate-limited column selection (max_candidates=20) for speed | score = 0.7384
+| | |/  
+| | | * 0707c70 (researcher-34) Multi-start greedy fixed column ordering with numpy trie-weight scoring | score = 0.713
+| | |/  
+| |/|   
+| | | * d062cf9 (researcher-43) LCP-based leaf column ordering experiments (all failed to beat parent) | score = 0.7374
+| |_|/  
+|/| |   
+| | | * 9ce53d5 (researcher-40) Character-level prefix-optimized leaf sorting with exhaustive first-column validation | score = 0.7372
+| | | | * 005eb5e (researcher-42) Explored full-suffix group sorting and inter-group LCP scoring variants | score = 0.7374 (no improvement over parent)
+| |_|_|/  
+|/| | |   
+| | | | * ce9c91f (researcher-48) Update findings.md with experiment results
+| | | | * f57b786 Defer best_col for singletons - recurse on remaining cols | score = 0.7384
+| | | |/  
+| | |/|   
+| | | | * 1b5d5bc (researcher-37) Character-level LCP optimization experiments (no improvement over parent) | score = 0.7369
+| | | |/  
+| | | | * 8ce7d02 (researcher-45) Update findings.md with correlated column merging results and failed attempts
+| | | | * ba6b839 Per-row suffix ordering by actual value length | score = 0.7387
+| | | | * 991a9f8 Merge correlated columns into prefix for free trie savings | score = 0.7386
+| | | |/  
+| | |/|   
+| | * | ad361fd (researcher-32) Speed-optimized hierarchical ordering with precomputed value lengths | score = 0.7377
+| | |/  
+| | | * ff8fdaa (researcher-33) Multi-start column ordering with char-level estimation + pandas sort | score = 0.7226
+| | |/  
+| |/|   
+| | | * 3a696dd (researcher-35) Order-invariance aware hierarchical ordering (skip row sorts) | score = 0.737
+| | |/  
+| | | * afa94bc (researcher-41) Update findings with 5 failed experiments from 0.7374 baseline
+| |_|/  
+|/| |   
+* | | f5d17e1 (researcher-30) Recursive hierarchical ordering with concat-sort fix for leaf groups | score = 0.7374
+| |/  
+|/|   
+| | * e057263 (researcher-25) Update findings with iterations 2-5 results
+| | * aac9a4d Numpy vectorized scoring for faster column evaluation | score = 0.7359
+| | * bf6763d LCP only for best first zero-score column (rest don't affect trie) | score = 0.7355
+| | * 4b4f2bf Reduce MIN_GROUP to 2 with constant-skip at L2 | score = 0.7354
+| | * b5de5a4 Constant-column skip at L2 for marginal PDMX improvement | score = 0.7353
+| | | * 581aab8 (researcher-31) Performance-optimized hierarchical ordering with Python list data access | score = 0.7375
+| |_|/  
+|/| |   
+| | | * e1266a7 (researcher-36) Update findings.md with experiment results
+| | | * f979755 LCP-based column ordering in no-sharing fallback | score = 0.7370
+| |_|/  
+|/| |   
+| | | * 9ca6ee5 (researcher-29) Update findings with 5 failed iteration results
+| |_|/  
+|/| |   
+* | | 0113483 (researcher-24) Fully recursive hierarchical column ordering with group-size-aware scoring | score = 0.7369
+|/ /  
+| | * 6fc9232 (researcher-27) Pairwise tournament candidate + multi-round swaps with vectorized LCP | score = 0.7347
+| | * 6eb4ff8 (researcher-12) Two-phase column ordering search with char-level Trie evaluation | score = 0.7342
+| | | * c711084 (researcher-26) LCP-based non-shared column ordering for pairs + failed alternatives | score = 0.7353
+| | | * ed4f7b1 (researcher-17) Update findings.md with all iteration results
+| | | * 3f6e764 Small-group adaptive ordering + length tiebreaker for zero-score cols | score = 0.7353
+| | | * fe983ea Iteration 3c: Small-group adaptive ordering (shared cols first)
+| | | | * 53a9432 (researcher-28) Per-row column ordering experiments (Trie-greedy, local search) all fail to break 0.735 plateau | score = 0.7352
+| | |_|/  
+| |/| |   
+| * | | f137094 (researcher-18) 3-level hierarchy with LCP leaf tiebreaking for partial prefix sharing | score = 0.7352
+| | |/  
+| |/|   
+| | | * 72483b6 (researcher-21) Adaptive column ordering with serialized-string sort | score = 0.7331
+| | |/  
+| | | * 6eddf46 (researcher-23) Recursive hierarchical sort with cascade-aware column selection | score = 0.729
+| |_|/  
+|/| |   
+| | | * c264ed8 (researcher-20) Multi-level hierarchical column ordering with greedy prefix refinement | score = 0.7176
+| |_|/  
+|/| |   
+| | | * f475124 (researcher-22) Greedy hierarchical column ordering with multi-start fallback | score = 0.730
+| | | * d4fdb6e (researcher-2) Multi-start sort with fixed col ordering and prefix-aware selection | score = 0.718
+| | | * f7e0d2a Multi-start sort with fixed column ordering and cumprod prefix semantics | score = 0.7178
+| | | * 0589f04 Multi-start sort with per-row column ordering | score = 0.7098
+| |_|/  
+|/| |   
+| | | * 9830ccb (researcher-19) Fast hierarchical adaptive column ordering with recursive grouping | score = 0.731
+| |_|/  
+|/| |   
+| | | * 6c76b71 (researcher-13) Adaptive multi-level sort + hybrid follow-prev column ordering | score = 0.7204483787141926
+| | | | * c8f7835 (researcher-14) Tested alternative scoring methods (exact char gain, partial LCP, empirical validation) - all failed to beat baseline | score = 0.735
+| | |_|/  
+| |/| |   
+| | | | * 8b8ef1f (researcher-15) Character-level greedy prefix matching with multi-level adaptive column ordering | score = 0.7083
+| |_|_|/  
+|/| | |   
+| | | | * 7523a25 (researcher-11) Alternative column scoring formulas (Trie-savings, exact savings, look-ahead) all failed to beat baseline | score = 0.735 (unchanged, reverted to baseline)
+| | |_|/  
+| |/| |   
+| * | | d2e32d2 (researcher-8) Hierarchical adaptive column ordering (3-level) for prefix caching | score = 0.735
+|/ / /  
+| | | * 730f2f6 (researcher-5) Fixed column ordering with multi-candidate selection and sampled evaluation | score = 0.7219
+| | |/  
+| | * 5a634ae Hybrid sort + intra-group greedy NN + inter-group TSP | score = 0.7040568724424762
+| | * f818f37 Hybrid sort + intra-group greedy NN + inter-group TSP | score = 0.7038
+| |/  
+|/|   
+| | * 876357b (researcher-16) Column-pivot recursive partitioning: decision-tree column selection with per-row prefix optimization | score = 0.6958
+| |/  
+|/|   
+| | * d464e83 (researcher-4) Hybrid sort + greedy NN with per-row column ordering | score = 0.7056
+| | * 6bee99c Sort-based row ordering with per-row adaptive column serialization | score = 0.6929
+| | * b092311 Sort-based row ordering with PHC-potential column scoring and per-row adaptive serialization | score = 0.6949
+| |/  
+|/|   
+| | * 0da2a70 (researcher-6) Adaptive multi-formula sort-based column ordering selection | score = 0.7147
+| | * 5956672 Sort-based global column ordering for trie-based prefix matching | score = 0.7063
+| |/  
+|/|   
+| | * 1fdfcc7 (researcher-9) Frequency-encoded hierarchical lexsort with optimal per-row column ordering | score = 0.6922
+| | * ccb7f56 Freq-weighted hierarchical sort + per-row column ordering | score = 0.692
+| |/  
+|/|   
+| | * 5a705c4 (researcher-10) NN row ordering + character-level greedy column ordering | score = 0.7062
+| | * 9e4718b Greedy hierarchical sort + field-level column ordering | score = 0.7032
+| |/  
+|/|   
+| | * dd3b813 (researcher-3) Multi-start greedy NN + natural clustering + or-opt local search | score = 0.6928
+| | * 584ec2b Greedy NN row chaining with integer encoding, multi-start, 2-opt | score = 0.692
+| | * 4203d8d Multi-start greedy NN + 2-opt with integer encoding for row ordering | score = 0.6916
+| |/  
+|/|   
+| | * aa15d42 (researcher-7) Fixed column ordering with lexicographic sort for trie-optimal prefix reuse | score = 0.7033
+| | * d6802fe Fixed column ordering + lexicographic sort (replaces complex recursive approach) | score = 0.703219177068567
+| |/  
+|/|   
+| | * 46d0e18 (researcher-1) Greedy NN with per-row optimal column ordering and vectorized scoring | score = 0.6800
+| | * 401bb59 Sort + fixed column ordering for trie-based prefix caching | score = 0.7033
+| |/  
+| * 2212973 Adaptive column ordering selection (greedy vs simple) with lexicographic sort | score = 0.7331
+|/  
+* bb1cc55 (HEAD -> master) initial

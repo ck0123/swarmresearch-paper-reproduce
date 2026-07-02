@@ -1,0 +1,117 @@
+* 17890fe (researcher-49) GA-IG hybrid with NEH construction and population-based diversification | score = 4184.100418410042
+| * 5c2fc5c (researcher-44) ALNS + Exact Block Optimization (EBO) for local block permutation | score = 4504.504504504504
+| | * 4efa676 (researcher-46) Memetic algorithm with OX crossover (failed: 4424 < 4444 baseline) | score = 4424.778761061947
+| | * 306fa90 (researcher-28) Adaptive LNS with complexity-based time allocation | score = 4444.444444444444
+| | | * bf7b206 (researcher-47) Sliding window exact optimization post-ALNS (failed - no improvement) | score = no improvement over baseline 4504.50
+| | |/  
+| |/|   
+| | | * 1cad0d7 (researcher-31) Iterated best-reinsertion with 4x-fast custom evaluator | score = 3891.0505836575876
+| |_|/  
+|/| |   
+| | | * 0027533 (researcher-35) IG + critical-path guided SA (40% bias toward bottleneck txns) | score = 4444.444444444444
+| | | | * c378c73 (researcher-40) Incremental prefix-state insertion + double-bridge perturbation (no score improvement) | score = 4444.444444444444
+| | | | | * 93865a7 (researcher-45) Memetic Algorithm with scatter search recombination + ALNS | score = 4504.504504504504
+| | |_|_|/  
+| |/| | |   
+| | | | | * bc0a7e0 (researcher-41) Prefix-cached insertion with early termination + targeted destruction IG | score = 4484.304932735426
+| | | | |/  
+| | | | | * f9c7f01 (researcher-50) Memetic algorithm with OX/PMX crossover + local search | score = 4366.81 (failed to beat ALNS baseline of 4504.50)
+| | |_|_|/  
+| |/| | |   
+| | | | | * d57656c (researcher-48) Conflict-aware ALNS with adaptive operator selection (random/worst/related/Shaw removal) | score = 4504.504504504504
+| | | | |/  
+| | | | | * 47f58f0 (researcher-43) ILS with exhaustive insertion-neighborhood descent (failed) | score = 4329 (worse than ALNS baseline 4504)
+| | |_|_|/  
+| |/| | |   
+| * | | | 8dffebb (researcher-36) ALNS with worst/related removal and adaptive operator selection | score = 4504.504504504504
+| | |/ /  
+| |/| |   
+| | | | * d5708b6 (researcher-37) ALNS multi-removal perturbation (no improvement over baseline) | score = 4385.964912280702
+| | | |/  
+| | |/|   
+| | | | * bf55efc (researcher-39) Array-based prefix-sweep insertion with early termination (2.87x speedup on find_best_insert) | score = 4464.285714285715
+| | | |/  
+| | | * ccbbfb5 (researcher-30) Fast custom evaluator (3.7x speedup) + ILS with IG and bottleneck targeting | score = 4444.444444444444
+| | | | * 7fecde5 (researcher-38) Memetic algorithm (GA + OX crossover + random LS) with 2.4x fast evaluator | score = 4115.226337448559
+| |_|_|/  
+|/| | |   
+| | | | * 27d2ba5 (researcher-42) C-compiled evaluator (gcc+ctypes) with guided IG multi-phase search | score = 4587.155963302753
+| | |_|/  
+| |/| |   
+| | | | * ac16645 (researcher-29) Ruin-and-Recreate LNS and multi-restart SA experiments | score = failed to beat baseline 4386
+| | | |/  
+| | |/|   
+| | * | e063f68 (researcher-33, researcher-17) Fast custom evaluator (5x speedup) with SA restarts and bottleneck-directed search | score = 4385.964912280702
+| | | | * 1d32394 (researcher-34) Critical path analysis + targeted relocation experiment | score = 4424.778761061947 (no improvement)
+| | |_|/  
+| |/| |   
+| * | | d93d7c9 (researcher-21) Custom array evaluator with suffix-optimized IG + SA refinement | score = 4424.778761061947
+| | |/  
+| |/|   
+| | | * ac10052 (researcher-25) Pairwise preference construction + ILS with insertion local search | score = 3921.5686274509803
+| |_|/  
+|/| |   
+| | | * 7a3cbec (researcher-11) VND with or-opt-2/3 + perturbation restarts | score = 3937.007874015748
+| | | | * 182c16e (researcher-32) Fast custom evaluator (5x speedup) + LNS with related removal strategy | score = 4329.004329004329
+| | | | | * a8accf8 (researcher-24) ALNS, enriched SA+LAHC, and Memetic Algorithm all failed to beat baseline SA | score = FAILED (all worse than baseline 4274)
+| | | | | | * 643f04c (researcher-22) ALNS with problem-specific destroy operators (worst/adjacent removal) | score = FAILED, worse than baseline 4366
+| | |_|_|_|/  
+| |/| | | |   
+| * | | | | 3a88668 (researcher-27, researcher-15) Iterated Greedy with NEH construction: NEH builds high-quality initial solution, IG refines via destroy/reconstruct | score = 4366.812227074236
+| | |_|_|/  
+| |/| | |   
+| | | | | * 09aba88 (researcher-18) Iterated Local Search with or-opt and double-bridge perturbation | score = 3623.188405797101
+| |_|_|_|/  
+|/| | | |   
+| | | | | * b479b48 (researcher-23) Memetic algorithm with Order Crossover (OX) + LNS | score = 4184.1 (FAILED, worse than baseline 4219.4)
+| | | | |/  
+| | | | * f06eca0 (researcher-10) LNS ruin-and-recreate with worst/random/segment removal and greedy repair | score = 4219.4092827004215
+| | | | * 458de77 (researcher-5) ILS insertion neighborhood with variance observation | score = 3610.1083032490974
+| | | | * 8811902 ILS with insertion neighborhood and multi-restart greedy | score = 3861.003861003861
+| |_|_|/  
+|/| | |   
+| | | | * 04e3467 (researcher-12) Full greedy construction + fast ALNS with optimal reinsertion | score = 4000.0
+| |_|_|/  
+|/| | |   
+| | | | * 971fe41 (researcher-26) NEH construction + insertion LS + iterated greedy (destroy-reconstruct) | score = 4255.31914893617
+| |_|_|/  
+|/| | |   
+| | | | * fd3bb12 (researcher-13) ALNS-based transaction scheduling with conflict-aware destroy/repair | score = 4166.666666666667
+| |_|_|/  
+|/| | |   
+| | | | * 60594d3 (researcher-19) Multi-start greedy + simulated annealing with insertion local search | score = 4237.288135593220
+| |_|_|/  
+|/| | |   
+| | | | * 109fc79 (researcher-16) Tested memetic algorithm, LNS, and conflict-weighted SA; all worse than baseline SA | score = failed to improve (best attempt: 4000 vs baseline 4274)
+| | |_|/  
+| |/| |   
+| * | | 2ffc29a (researcher-2) SA with restarts: multi-start greedy + simulated annealing with stagnation-triggered restarts | score = 4274
+| * | | 5fa9ace Simulated annealing with restarts (swap/insert/reverse moves) | score = 4000
+|/ / /  
+| | | * b60b74b (researcher-9) Explored alternative algorithms (ILS, LNS, multi-start SA) - all worse than baseline SA | score = failed to beat baseline 4184
+| | |/  
+| |/|   
+| | | * a14389c (researcher-20) Position-weighted conflict model + SA with conflict-guided perturbation | score = 3436 (FAILED, worse than baseline 3906)
+| | |/  
+| | * d571783 (researcher-3) Conflict-aware greedy + full-scan insertion local search | score = 3906.25
+| | * e794a13 Conflict-aware multi-restart greedy + best-improvement insertion local search | score = 3787.878787878788
+| |/  
+|/|   
+| | * 14e0ae5 (researcher-1) Greedy + randomized insertion LS + SA polish | score = 4016
+| | * e14d9fd Iterated local search with greedy seeding and insertion neighborhoods | score = 4115.23
+| |/  
+|/|   
+| | * 2e0a69f (researcher-14) Adaptive Large Neighborhood Search (ALNS) with conflict-aware operators | score = 4115 (failed to beat baseline 4184)
+| |/  
+| * 9a110f4 (researcher-8) Simulated annealing with greedy construction and local search | score = 4184.100418410042
+|/  
+| * 23db128 (researcher-4) Update findings with latest evaluation result (score 4000, makespan 249)
+| * d0b7667 Multi-restart greedy + insertion local search + simulated annealing | score = 3597
+|/  
+| * 036454a (researcher-7) Conservative SA with or-opt sandwich: greedy -> or-opt -> SA -> or-opt | score = 3921.6
+| * c487f1f Multi-start greedy + simulated annealing + or-opt local search | score = 3649.6
+|/  
+| * e54418d (researcher-6) SA with tuned time allocation (27% greedy, 70% SA, restart) + hill-climb polish | score = 4115.226337448559
+| * 08d2be7 Multi-start greedy + simulated annealing with mixed moves | score = 3636.363636363636
+|/  
+* 7948c0b (HEAD -> master) initial

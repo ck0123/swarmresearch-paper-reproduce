@@ -1,0 +1,50 @@
+* 744a16c (HEAD -> master) Time-adaptive depth-3/2 lookahead with connectivity+adjacency eval | score = ~700K combined
+| * 4aaed43 (researcher-21) Compact uint8_t[100] board with unrolled lookahead (30% faster but no score gain) | score = 692-710K (below 723K baseline)
+| | * 15b4869 (researcher-24) Time-adaptive depth selection with dynamic time budgeting | score = 727562.36
+| |/  
+| | * 6ef763f (researcher-22) Tested stratified sampling, depth-4, DSU eval, and variance-penalized selection - none beat baseline | score = no improvement (best remained 723K)
+| |/  
+| | * 21cc9f3 (researcher-23) Bitboard full eval at depth-3 leaf (no fast eval), samples {10,5,3}/{42,9} | score = 722250.46
+| | * b099c9b (researcher-19) Bitboard evaluation (100-bit flood fill + bitwise adjacency) with increased samples {40,9} | score = 708829.46
+| |/  
+| | * 634d2ab (researcher-25) Update findings with tuning experiment results | score = no improvement over 714K
+| | | * 08aff86 (researcher-17) Monte Carlo rollout approach (greedy policy to game end) | score = failed (479K full MC, 672K hybrid vs 723K baseline)
+| | |/  
+| |/|   
+| | | * 05215bc (researcher-18) Non-uniform time allocation with weighted budget (1.5x early, 0.7x late) | score = 709505
+| | | * 0f94bed (researcher-15) Depth-2 expectimax with dominant-component bonus and time-adaptive sampling | score = 702328
+| |_|/  
+|/| |   
+| | | * bd2bf82 (researcher-16) Update findings with optimization iteration results | score = 723760.44 (unchanged)
+| | |/  
+| |/|   
+| * | da98f56 (researcher-12) Increased sample counts (depth-2: 24,6; depth-3: 10,5,3) using time headroom | score = 723760.44
+| |/  
+| | * b59de58 (researcher-20) Monte Carlo rollouts & reactive paradigms (all failed vs baseline) | score = 438K (best of 3 variants, all below 723K baseline)
+| |/  
+|/|   
+| | * 2d2a33e (researcher-11) Direction pruning, future adjacency, iterative deepening, multi-seed ensemble, importance sampling — all failed to beat baseline | score = all below 714K baseline
+| |/  
+| * 9e67c06 (researcher-6) Adaptive depth-3 lookahead with fast leaf eval for early game | score = 714014.76
+| | * ced08bc (researcher-13) Search strategy experiments (selective deepening, pruning, iterative, merge potential) — all failed to beat baseline | score = no improvement over 698K baseline
+| | * 5cde476 (researcher-8) Bounding box tightness + row/col purity eval with higher sampling | score = 698376.82
+| | * 95e67f6 (researcher-4) Pure connectivity + adjacency + CoM compactness evaluation without spatial region heuristics | score = 664058.88
+| |/  
+|/|   
+| | * 6a3fb4a (researcher-14) Depth-3 expectimax with BFS connectivity eval + adaptive sampling | score = 686K
+| | * 8d0db68 (researcher-10) Depth-2 expectimax with BFS connectivity + zone targeting + adjacency scoring | score = 669K combined, 729K single-test
+| |/  
+|/|   
+| | * 90c2b6d (researcher-7) Depth-3 lookahead with simplified eval (sum_sq + adjacency) | score = 691699
+| |/  
+| * a50eab1 (researcher-5) Adjacency-based eval without fixed column regions | score = 697044.16
+|/  
+| * 0fb2c1f (researcher-9) Time-budgeted MC with connectivity-based greedy inner tilt | score = 643K
+|/  
+| * 78cce13 (researcher-3) Monte Carlo rollouts with greedy adjacency policy | score = 493705.58
+|/  
+| * fc1d6f2 (researcher-1) Monte Carlo rollout with greedy adjacency policy | score = 463023.4
+|/  
+| * 578a883 (researcher-2) Monte Carlo rollouts with greedy adjacency policy | score = 590726.94
+|/  
+* fec7a5f initial

@@ -1,0 +1,26 @@
+* 7bb3b35 (researcher-14) Threshold graphs with edge-disagreement decoder, N=M*(1+4eps/(1-2eps)), equal-T-spacing | score = 11945807
+| * 663a112 (researcher-11) Improved N formula (sqrt scaling) and raised enumeration threshold to N<=18 | score = 22438666.24
+| | * 9db8a48 (researcher-18, researcher-15) Tuned N formula (12x multiplier) and expanded enumeration threshold to N<=18 | score = 24502142.5
+| |/  
+| | * 1193531 (researcher-19, researcher-13) Threshold graphs + 2-opt local search for vertex alignment | score = 16507333.78
+| | * fe8eb31 (researcher-6) Threshold graphs + approx GED with random within-class permutation search | score = 15511776.58
+| | | * acda3b1 (researcher-17, researcher-16, researcher-12) Hybrid hamming+degree-seq matching on degree-sorted threshold graphs | score = 27653370.42
+| | |/  
+| |/|   
+| * | a551250 (researcher-10) Threshold graphs with greedy max-separation degree-sequence matching | score = 21785160.0
+|/ /  
+| | * 9109586 (researcher-7) Code cleanup + failed attempts to beat K=3.0 threshold approach | score = 15040970.78
+| |/  
+| * 2f4c24c (researcher-2) Threshold graph encoding + sorted degree seq + approx GED decoding | score = 15040970.78
+|/  
+| * 036631d (researcher-8) Bayesian marginal likelihood GED + degree local search | score = 11572962.10
+| * c16787b (researcher-5) Degree-seq matching with lex-fill encoding and Hamming local search | score = 11651068.56
+|/  
+| * e0977d4 (researcher-9) Evenly-spaced edge counts for threshold graph encoding | score = 10717294.2
+| * d3b24ee (researcher-1) Threshold graphs with log-likelihood decoding for high-eps cases | score = 9825676.44
+|/  
+| * 6bb9022 (researcher-3) Sorted degree sequence matching with prefix construction | score = 9591679.0
+|/  
+| * 5660934 (researcher-4) Special vertices encoding with degree-based Hamming decoder and N sweep optimization | score = 5117328.56
+|/  
+* 2e2c7e5 (HEAD -> master, researcher-20) initial

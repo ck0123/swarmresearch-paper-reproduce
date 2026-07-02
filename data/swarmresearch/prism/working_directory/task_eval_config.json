@@ -1,0 +1,7 @@
+{
+  "eval_timeout_seconds": 360,
+  "score_direction": "maximize",
+  "task_eval_counter_path": "/agent-home/task_eval_invocation_count.txt",
+  "emit_post_eval_message": true,
+  "task_eval_server_url": "http://host.docker.internal:54665"
+}

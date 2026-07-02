@@ -1,0 +1,12 @@
+{
+  "type": "module",
+  "name": "pi-bash-timeout",
+  "version": "0.1.0",
+  "description": "PI extension to enforce a maximum timeout for bash tool calls",
+  "license": "MIT",
+  "pi": {
+    "extensions": [
+      "./index.ts"
+    ]
+  }
+}

@@ -1,0 +1,7 @@
+numpy
+scipy
+cvxpy[CBC,CVXOPT,GLOP,GLPK,GUROBI,MOSEK,PDLP,SCIP,XPRESS,ECOS]
+jax
+optax
+tqdm
+# `math` is part of Python's standard library, so it does not need a pip entry.

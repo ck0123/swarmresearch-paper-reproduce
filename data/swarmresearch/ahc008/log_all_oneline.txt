@@ -1,0 +1,52 @@
+* 0a727cd (researcher-22) placeholder
+* fb348dd Use closest-humans distance instead of all-humans average for corner scoring | score = 289288031
+* 0a34ca0 (researcher-25, researcher-23, researcher-17) Update findings.md with optimization iteration results
+* abd7ee1 Proportional human allocation based on wall cost | score = 285947870
+| * 14c0095 (researcher-24) WIP: tighten second strip to 0-1 pets and add turn<150 cutoff
+| * 1ad4ea2 (researcher-18) Update findings.md with optimization results
+| * 87116c7 Dual strip on opposite edges - build second wall after first completes | score = 281643358
+| | * 907c815 (researcher-19) Explored diagonal walls, dynamic urgency, single-zone, sequential building - all failed to beat parent | score = 232M/255M/131M/179M (parent=280M)
+| |/  
+|/|   
+* | d419be2 (researcher-12) Update findings.md with optimization results
+* | 33d4c63 Penalize corners with pets on wall boundary (leakage risk) | score = 280372293
+* | 7131c92 Build from corner intersection outward for faster sealing | score = 274314631
+* | 1ae8506 Add human distance penalty and graduated pet penalty to corner scoring | score = 252759772
+* | 67fb377 Allow all non-overlapping corner pairs instead of only opposite corners | score = 248655265
+| | * bc8417f (researcher-20) Tried unified enclosure + dynamic assignment, two-phase expansion, greedy matching - all worse than parent | score = 253312825
+| |/  
+| * 7c6cf96 (researcher-16) Concentrated single-wall strip strategy with all humans cooperating on one full-width wall | score = 277398026
+|/  
+| * a3db8cb (researcher-21) Adaptive corner L-shaped enclosure with gather-then-build | score = 44750635
+| | * 6f5b612 (researcher-15) Four corner L-shaped enclosures with size 10, gated entry per corner | score = 232376572
+| | * 7831699 (researcher-9) Gated edge-touching enclosures: each human builds personal pen with deferred gate seal | score = 182898839
+| |/  
+| | * 58439fa (researcher-13) Failed experiments: phased extension (8M), U-shape (51M), L-shape+extension (69M) - all regressed from parent 228M | score = regression from 228M baseline
+| |/  
+|/|   
+* | d15cab4 (researcher-6) L-shaped corner wall strategy sealing pet-free corners with minimal wall cells | score = 228467991
+| | * d3d968b (researcher-14) Update findings.md with iteration results
+| | * 70caed5 Unify time penalty formula for single wall evaluation | score = 219120550
+| | * 27b7394 Extend top wall range to 3-20 for asymmetric configs | score = 214485132
+| | * 098e688 Increase time penalty coefficient from 0.015 to 0.025 | score = 214485132
+| | * 1d90c77 (researcher-11) Update findings.md with optimization iteration results
+| | * 4f2c3dd Optimize human split ratio across all splits and improved wall selection | score = 211549653
+| |/  
+|/|   
+| | * aaaa9ad (researcher-7) Explored box confinement, adaptive axis, phased dual-h, per-human pockets — all scored worse than baseline | score = failed to improve (best attempt 98M vs baseline 128M)
+| | * 2fbeec7 (researcher-3) Corner rectangle safe zones with greedy wall assignment | score = 128711523
+| |/  
+| | * b03d041 (researcher-10) Collaborative corner rectangle enclosure approach | score = 133701647
+| |/  
+| | * 3d84602 (researcher-8) Cross walls and narrow band strategies (failed experiments) | score = failed (124M, 84M, 112M vs parent 185M)
+| |/  
+|/|   
+* | 8039b50 (researcher-2) Dual cooperative horizontal wall strategy trapping pets in middle band | score = 185199478
+|/  
+| * 414e269 (researcher-1) Cooperative shared enclosure strategy where all humans build single rectangle | score = 90601779
+|/  
+| * 6de1b31 (researcher-4) Adaptive corner enclosure with greedy wall claiming | score = 83824121
+|/  
+| * 44390ac (researcher-5) Cooperative single horizontal wall strategy | score = 2610242.52
+|/  
+* 8004744 (HEAD -> master) initial

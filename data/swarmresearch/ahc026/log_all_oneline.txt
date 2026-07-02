@@ -1,0 +1,43 @@
+* fe18ce8 (researcher-20) update findings.md with researcher-20 results (no improvements)
+| * db54150 (researcher-22) Update findings with checkpoint interval and mutation experiments (no score change)
+| * 8d8a350 (researcher-19) Update findings.md with iteration results
+| * 2adaa8f SA temperature T_init=60, T_final=0.005 | score = 9274.06
+| * 5872f99 Checkpoint interval 20 instead of 10 (fewer checkpoints, faster rebuild) | score = 9271.2
+| * df0536b (researcher-13) Checkpoint-based incremental SA with interval-10 snapshots | score = 9270.74
+| * 37200ba (researcher-7) Multi-move patience-sort + SA single-move hybrid | score = 9261.02
+| | * 9a2eb1e (researcher-25) Split-move neighborhood in SA: allow splitting blocks to 2 destinations | score = 9346.84
+| |/  
+|/|   
+* | 33c5bb8 (researcher-24, researcher-21, researcher-18) update findings.md with iteration results
+* | 247b5bb SA: batch=256, early-biased mutations (quadratic) | score = 9287.52
+* | e6e9a68 beam search (w=12, lookahead=8) + SA refinement | score = 9283.32
+* | 097687d (researcher-17) Update findings with optimizer iteration results
+* | 8d823c2 SA inner loop: in-place modify+restore, larger batch (128) | score = 9282.06
+| | * 6baf607 (researcher-16) Tested look-ahead, beam search, block splitting, checkpoint SA - none beat parent | score = 9281.46
+| |/  
+|/|   
+* | 5041061 (researcher-9) Greedy heuristic + SA (T:8->0.5, 1-2pt mutations) | score = 9281.46
+|/  
+| * e15d786 (researcher-14) Multi-paradigm exploration: split moves, pre-emptive peeling, deep rollout + SA | score = 9254
+|/  
+| * 6ee985c (researcher-15) Cascade splitting + SA over destination plans (multiple variants) | score = 9136
+|/  
+| * 8b59457 (researcher-11) Cost-weighted SA perturbation (focus on high-energy steps) | score = 463277
+| * 2089cfd (researcher-6) Split-aware multi-move greedy + SA over plan decisions | score = 463396
+|/  
+| * 2056544 (researcher-12) SA with cost-weighted targeted mutations (bias toward expensive steps) | score = 9270.12
+| * 6003c77 (researcher-1) Greedy heuristic + SA with fast static-array simulation | score = 9262.62
+|/  
+| * 7ff1179 (researcher-4) Improved greedy heuristic with larger lookahead and tuned weights | score = 9252.78
+|/  
+| * ee6f58f (researcher-5) Simplified plan-based SA with fast array evaluation | score = 9256.9
+|/  
+| * a262983 (researcher-8) Fast array-based SA with greedy init for box stacking | score = 462929
+|/  
+| * 9f0f3a7 (researcher-10) Greedy with strategic block splitting + parameter SA | score = 9189.32
+|/  
+| * aa9c413 (researcher-2) Multi-split greedy + SA: evaluate splitting blocks into 2 groups for better placement | score = 461964
+|/  
+| * 5180da3 (researcher-3) Block-splitting SA: allow splitting above-block into two sub-moves to different destinations | score = 460996
+|/  
+* 2943b7e (HEAD -> master, researcher-23) initial

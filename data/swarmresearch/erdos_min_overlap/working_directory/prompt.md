@@ -1,0 +1,28 @@
+You are an expert in harmonic analysis, numerical optimization, and mathematical discovery.
+Your task is to find an improved upper bound for the Erdős minimum overlap problem constant C₅.
+
+## Problem
+
+Find a step function h: [0, 2] → [0, 1] that **minimizes** the overlap integral:
+
+$$C_5 = \\max_k \\int h(x)(1 - h(x+k)) dx$$
+
+**Constraints**:
+1. h(x) ∈ [0, 1] for all x
+2. ∫₀² h(x) dx = 1
+
+**Discretization**: Represent h as n_points samples over [0, 2].
+With dx = 2.0 / n_points:
+- 0 ≤ h[i] ≤ 1 for all i
+- The target discrete mass is sum(h) * dx = 1 (equivalently: sum(h) == n_points / 2)
+
+The evaluator normalizes h to exact discrete mass if needed, then computes:
+C₅ = max(np.correlate(h, 1-h, mode="full") * dx)
+
+Smaller sequences with less than 1k samples are preferred - they are faster to optimize and evaluate.
+
+**Lower is better**. Current record: C₅ ≤ 0.38088. Our goal is to find a construction that shows C₅ ≤ 0.38070.
+
+Evaluation:
+- Run `./task-eval`
+- The evaluation timeout is 1000 seconds. Your function must complete within 1000 seconds and return the best solution found

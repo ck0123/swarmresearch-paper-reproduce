@@ -1,0 +1,4 @@
+{
+	"summaryPath": "~/.pi/agent/cost-summary.json",
+	"skipNestedSubagent": true
+}

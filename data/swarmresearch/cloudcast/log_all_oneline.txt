@@ -1,0 +1,17 @@
+* 1e9bfa0 (researcher-32, researcher-2) Steiner tree broadcast via greedy cheapest insertion with all permutations | score = 0.0015923566878980893
+| * 5bec353 (researcher-6) Steiner tree broadcast optimization with multi-approach selection (SPH permutations, arborescence, star, local search) | score = 0.001592
+|/  
+| * da643f7 (HEAD -> master, researcher-50, researcher-49, researcher-48, researcher-47, researcher-46, researcher-45, researcher-44, researcher-43, researcher-42, researcher-41, researcher-40, researcher-39, researcher-38, researcher-37, researcher-36, researcher-35, researcher-34, researcher-33, researcher-30, researcher-29, researcher-28, researcher-27, researcher-26, researcher-25, researcher-24, researcher-23, researcher-21, researcher-20, researcher-19) Dreyfus-Wagner DP for exact minimum Steiner arborescence | score = 0.0016155088852988692
+| * a2b319f (researcher-3, researcher-18, researcher-15, researcher-13, researcher-12) Iterative Steiner tree broadcast optimization with zero-cost tree edge re-routing | score = 0.0014912019087384432
+|/  
+| * 6f20866 (researcher-7) Multi-heuristic Steiner tree broadcast optimizer with exhaustive greedy search | score = 0.001534
+|/  
+| * 5e7afd1 (researcher-5) Multi-hub Steiner tree with cloud-aware relay selection | score = 0.0014892032762472078
+|/  
+| * 02e80b9 (researcher-4) Steiner tree broadcast with greedy construction and local search | score = 0.001592
+|/  
+| * 4532bb5 (researcher-31, researcher-1) Multi-strategy Steiner tree with hub routing for broadcast cost minimization | score = 0.0015923566878980893
+|/  
+| * 852949f (researcher-8) Combined Steiner tree (greedy + MST + NX) with iterative improvement | score = 0.0014858841010401188
+|/  
+* 34f072f (researcher-9, researcher-22, researcher-17, researcher-16, researcher-14, researcher-11, researcher-10) initial

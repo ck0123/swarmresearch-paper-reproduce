@@ -1,0 +1,12 @@
+{
+	"type": "module",
+	"name": "pi-cost-tracker",
+	"version": "0.1.0",
+	"description": "PI extension to track per-session and across-session token cost totals",
+	"license": "MIT",
+	"pi": {
+		"extensions": [
+			"./index.ts"
+		]
+	}
+}
