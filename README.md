@@ -1,8 +1,3 @@
-# SwarmResearch Reproduction Package
-
-This directory contains the minimal files needed to reproduce SwarmResearch task
-runs and inspect the released run data.
-
 ## Directories
 
 - `agent_configs/`: Agent runtime configurations used by the runner.
@@ -23,21 +18,3 @@ runs and inspect the released run data.
   `data/swarmresearch/README.md` for the layout.
 
 - `speculative_decoding/`: Speculative decoding case study environments and best solution crafted
-
-## Example
-
-Run the PI config sweep on `third_autocorr_ineq`:
-
-```bash
-uv run --extra server python swarmresearch_reproduce/evaluation/run_problem_config_sweep.py \
-  --tasks-root swarmresearch_reproduce/tasks/math/tasks \
-  --task-id third_autocorr_ineq \
-  --output-dir swarmresearch_reproduce/runs/pi \
-  --agent-dir swarmresearch_reproduce/agent_configs/pi-swarm-experimental \
-  --worker-image task \
-  --no-skill \
-  --parallel-configs
-```
-
-This requires Docker, `uv`, and credentials for the model provider configured in
-the selected agent config.
