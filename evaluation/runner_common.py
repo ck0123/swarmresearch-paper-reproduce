@@ -124,7 +124,13 @@ def wait_for_server_ready(port: int) -> bool:
 
 def start_server(tasks_root: Path, port: int, repo_root: Path) -> bool:
     server_script = repo_root / "swarmresearch_reproduce" / "evaluation" / "server.py"
-    server_log = Path(f"/tmp/task_eval_server_{port}.log")
+    temp_root = Path(
+        os.environ.get("BENCH_GOAL_PLUS_TMPDIR")
+        or os.environ.get("TMPDIR")
+        or Path.home() / ".tmp"
+    ).expanduser()
+    temp_root.mkdir(parents=True, exist_ok=True)
+    server_log = temp_root / f"task_eval_server_{port}.log"
     with open(server_log, "w", encoding="utf-8") as log:
         process = subprocess.Popen(
             ["uv", "run", "--extra", "server", str(server_script), "--tasks-root", str(tasks_root), "--port", str(port)],
